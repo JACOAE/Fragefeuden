@@ -33,13 +33,18 @@ public class addQuestionActivity extends AppCompatActivity {
 
     public void onSendQuestion(View view) {
 
-        databaseAddQuestion.setCorrectString(question.getText().toString());
+
+        databaseAddQuestion.setQuestionString(question.getText().toString());
         databaseAddQuestion.setCorrectString(correct.getText().toString());
         databaseAddQuestion.setWrong1String(wrong1.getText().toString());
         databaseAddQuestion.setWrong2String(wrong2.getText().toString());
         databaseAddQuestion.setWrong3String(wrong3.getText().toString());
 
+
+
         myRef.push().setValue(databaseAddQuestion);
+
+
         //TODO skicka värden till databas
 
         question.setText("");
