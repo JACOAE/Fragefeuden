@@ -27,7 +27,7 @@ public class addQuestionActivity extends AppCompatActivity {
         wrong2 = findViewById(R.id.editTextWrong2);
         wrong3 = findViewById(R.id.editTextWrong3);
         databaseAddQuestion = new databaseAddQuestion();
-        myRef = FirebaseDatabase.getInstance().getReference().child("dataBaseAddQuestion");
+        myRef = FirebaseDatabase.getInstance().getReference().child("databaseAddQuestion");
     }
 
     public void onSendQuestion(View view) {
