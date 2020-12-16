@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1048422176259",
+    "project_id": "fragefeuden",
+    "storage_bucket": "fragefeuden.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048422176259:android:278feed80f7f45a245e036",
+        "android_client_info": {
+          "package_name": "com.ete.fragefeuden"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048422176259-q94ifom3aq8qkdsnllo132kk5b8m2ep0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfUPUMLyvt1UJzT_xV46BWZLTiP4ruUfs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048422176259-q94ifom3aq8qkdsnllo132kk5b8m2ep0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
