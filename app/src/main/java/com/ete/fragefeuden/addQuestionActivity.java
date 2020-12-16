@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,7 +27,7 @@ public class addQuestionActivity extends AppCompatActivity {
         wrong2 = findViewById(R.id.editTextWrong2);
         wrong3 = findViewById(R.id.editTextWrong3);
         databaseAddQuestion = new databaseAddQuestion();
-        myRef = FirebaseDatabase.getInstance().getReference().child("dataBaseAddActivity");
+        myRef = FirebaseDatabase.getInstance().getReference().child("databaseAddQuestion");
     }
 
     public void onSendQuestion(View view) {
