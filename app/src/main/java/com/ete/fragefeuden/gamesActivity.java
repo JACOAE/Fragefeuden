@@ -32,10 +32,10 @@ public class gamesActivity extends AppCompatActivity {
     }
 
     public static Uri generateContentLink() {
-        /*Uri baseUrl = Uri.parse("https://your-custom-name.page.link");
+        Uri baseUrl = Uri.parse("https://your-custom-name.page.link");
         String domain = "https://your-app.page.link";
 
-        DynamicLink link = FirebaseDynamicLinks.getInstance()
+        /*DynamicLink link = FirebaseDynamicLinks.getInstance()
                 .createDynamicLink()
                 .setLink(baseUrl)
                 .setDomainUriPrefix(domain)
@@ -44,7 +44,7 @@ public class gamesActivity extends AppCompatActivity {
                 .buildDynamicLink();
 
         return link.getUri();*/
+
+    return null;
     }
-
-
 }
