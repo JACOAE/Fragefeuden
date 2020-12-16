@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ public class addQuestionActivity extends AppCompatActivity {
     DatabaseReference myRef;
     EditText question, correct, wrong1, wrong2, wrong3;
     databaseAddQuestion databaseAddQuestion;
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,22 +28,28 @@ public class addQuestionActivity extends AppCompatActivity {
         wrong1 = findViewById(R.id.editTextWrong1);
         wrong2 = findViewById(R.id.editTextWrong2);
         wrong3 = findViewById(R.id.editTextWrong3);
+        btn = findViewById(R.id.button);
         databaseAddQuestion = new databaseAddQuestion();
         myRef = FirebaseDatabase.getInstance().getReference().child("databaseAddQuestion");
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                databaseAddQuestion.setQuestionString(question.getText().toString());
+                databaseAddQuestion.setCorrectString(correct.getText().toString());
+                databaseAddQuestion.setWrong1String(wrong1.getText().toString());
+                databaseAddQuestion.setWrong2String(wrong2.getText().toString());
+                databaseAddQuestion.setWrong3String(wrong3.getText().toString());
+                myRef.push().setValue(databaseAddQuestion);
+            }
+        });
     }
 
     public void onSendQuestion(View view) {
 
 
-        databaseAddQuestion.setQuestionString(question.getText().toString());
-        databaseAddQuestion.setCorrectString(correct.getText().toString());
-        databaseAddQuestion.setWrong1String(wrong1.getText().toString());
-        databaseAddQuestion.setWrong2String(wrong2.getText().toString());
-        databaseAddQuestion.setWrong3String(wrong3.getText().toString());
 
 
 
-        myRef.push().setValue(databaseAddQuestion);
 
 
         //TODO skicka värden till databas
