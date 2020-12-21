@@ -32,30 +32,31 @@ public class addQuestionActivity extends AppCompatActivity {
 
     public void onSendQuestion(View view) {
 
+        if (noEmptyValues()) {
+            databaseAddQuestion.setQuestionString(question.getText().toString());
+            databaseAddQuestion.setCorrectString(correct.getText().toString());
+            databaseAddQuestion.setWrong1String(wrong1.getText().toString());
+            databaseAddQuestion.setWrong2String(wrong2.getText().toString());
+            databaseAddQuestion.setWrong3String(wrong3.getText().toString());
 
-        databaseAddQuestion.setQuestionString(question.getText().toString());
-        databaseAddQuestion.setCorrectString(correct.getText().toString());
-        databaseAddQuestion.setWrong1String(wrong1.getText().toString());
-        databaseAddQuestion.setWrong2String(wrong2.getText().toString());
-        databaseAddQuestion.setWrong3String(wrong3.getText().toString());
+            myRef.push().setValue(databaseAddQuestion);
 
+            question.setText("");
+            correct.setText("");
+            wrong1.setText("");
+            wrong2.setText("");
+            wrong3.setText("");
 
+            Context context = getApplicationContext();
+            Toast toast = Toast.makeText(context, "Skickad!", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
 
-        myRef.push().setValue(databaseAddQuestion);
-
-
-        //TODO skicka värden till databas
-
-        question.setText("");
-        correct.setText("");
-        wrong1.setText("");
-        wrong2.setText("");
-        wrong3.setText("");
-
-        Context context = getApplicationContext();
-        CharSequence text = "Skickad!";
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
+    public boolean noEmptyValues() {
+        if (question.getText().toString().equals("") || correct.getText().toString().equals("") || wrong1.getText().toString().equals("") || wrong2.getText().toString().equals("") || wrong3.getText().toString().equals("")) {
+            return false;
+        }
+        else return true;
     }
 }
