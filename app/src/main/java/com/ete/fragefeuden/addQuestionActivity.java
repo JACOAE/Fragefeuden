@@ -66,4 +66,10 @@ public class addQuestionActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
     }
+
+    public boolean noEmptyValues() {
+        if (question.getText().toString().equals("") || correct.getText().toString().equals("") || wrong1.getText().toString().equals("") || wrong2.getText().toString().equals("") || wrong3.getText().toString().equals("")) {
+            return false;
+        } else return true;
+    }
 }
