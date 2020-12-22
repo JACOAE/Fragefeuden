@@ -3,8 +3,13 @@ package com.ete.fragefeuden;
 public class databaseAddQuestion {
    private String questionString, correctString, wrong1String, wrong2String, wrong3String;
 
-   public databaseAddQuestion(){
-   }
+    public databaseAddQuestion(String questionString, String correctString, String wrong1String, String wrong2String, String wrong3String) {
+        this.questionString = questionString;
+        this.correctString = correctString;
+        this.wrong1String = wrong1String;
+        this.wrong2String = wrong2String;
+        this.wrong3String = wrong3String;
+    }
 
     public String getQuestionString() {
         return questionString;
