@@ -19,45 +19,33 @@ public class addQuestionActivity extends AppCompatActivity {
     FirebaseDatabase root;
     String questionString, correctString, wrong1String, wrong2String, wrong3String;
     EditText question, correct, wrong1, wrong2, wrong3;
-    databaseAddQuestion databaseAddQuestion;
-    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_question);
+        Toast.makeText(addQuestionActivity.this, "Connected", Toast.LENGTH_LONG).show();
+
         question = findViewById(R.id.editTextQuestion);
         correct = findViewById(R.id.editTextCorrect);
         wrong1 = findViewById(R.id.editTextWrong1);
         wrong2 = findViewById(R.id.editTextWrong2);
         wrong3 = findViewById(R.id.editTextWrong3);
-        btn = findViewById(R.id.button);
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                root = FirebaseDatabase.getInstance();
-                myRef = root.getReference("questions");
-
-
-                questionString = question.getText().toString();
-                correctString = correct.getText().toString();
-                wrong1String = wrong1.getText().toString();
-                wrong2String = wrong2.getText().toString();
-                wrong3String = wrong3.getText().toString();
-                databaseAddQuestion addQuestionClass  = new databaseAddQuestion(questionString, correctString, wrong1String, wrong2String, wrong3String);
-                myRef.child(questionString).setValue(addQuestionClass);
-            }
-        });
     }
 
     public void onSendQuestion(View view) {
 
+        root = FirebaseDatabase.getInstance();
+        myRef = root.getReference("questions");
 
 
-
-
-
+        questionString = question.getText().toString();
+        correctString = correct.getText().toString();
+        wrong1String = wrong1.getText().toString();
+        wrong2String = wrong2.getText().toString();
+        wrong3String = wrong3.getText().toString();
+        databaseAddQuestion addQuestionClass = new databaseAddQuestion(questionString, correctString, wrong1String, wrong2String, wrong3String);
+        myRef.child(questionString).setValue(addQuestionClass);
 
         //TODO skicka värden till databas
 
