@@ -41,8 +41,8 @@ public class gamesActivity extends AppCompatActivity {
     //Denna kallas när man startar nytt game
     public void createNewGame(View view){
         Random rand = new Random();
-        int talTak = 9999;
-        int int_random = rand.nextInt(talTak);
+        final int TALTAK = 9999;
+        int int_random = rand.nextInt(TALTAK);
 
         Game newGame = new Game(int_random);
 
@@ -70,6 +70,7 @@ public class gamesActivity extends AppCompatActivity {
             }
 
             spelKnapp.setText(String.valueOf(int_random));
+            spelKnapp.setVisibility(View.VISIBLE);
         }
     }
 

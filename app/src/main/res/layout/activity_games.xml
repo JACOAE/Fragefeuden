@@ -9,81 +9,95 @@
 
     <Button
         android:id="@+id/spel3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingVertical="20dp"
+        android:layout_marginHorizontal="20dp"
         android:text="Fritt"
-        android:onClick="continueGame"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/spel2"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias=".03"
         app:layout_constraintStart_toStartOf="@+id/spel2"
+        android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@+id/spel2" />
 
     <Button
         android:id="@+id/spel2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:paddingVertical="20dp"
+        android:layout_marginHorizontal="20dp"
         android:text="Fritt"
-        android:onClick="continueGame"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/spel1"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/spel1"
-        app:layout_constraintTop_toBottomOf="@+id/spel1" />
+        app:layout_constraintTop_toBottomOf="@+id/spel1"
+        android:visibility="invisible"
+        app:layout_constraintVertical_bias=".03" />
 
     <Button
         android:id="@+id/joinGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
         android:onClick="joinGame"
         android:text="Join Game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spel3"
+        app:layout_constraintVertical_bias=".8" />
 
     <Button
         android:id="@+id/startaNytt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="Starta nytt spel"
         android:onClick="createNewGame"
+        android:text="Starta nytt spel"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".1" />
 
     <Button
         android:id="@+id/spel0"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:paddingVertical="20dp"
+        android:layout_marginHorizontal="20dp"
         android:text="Fritt"
-        android:onClick="continueGame"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias=".1"
+        android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@+id/startaNytt" />
 
     <Button
         android:id="@+id/spel1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:paddingVertical="20dp"
+        android:layout_marginHorizontal="20dp"
         android:text="Fritt"
-        android:onClick="continueGame"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias=".03"
+        android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@+id/spel0" />
 
     <EditText
         android:id="@+id/joinGameNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="Spel-ID"
         android:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/joinGame"
         app:layout_constraintEnd_toEndOf="@+id/joinGame"
         app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="@+id/joinGame" />
+        app:layout_constraintStart_toStartOf="@+id/joinGame"
+        app:layout_constraintTop_toBottomOf="@+id/spel3"
+        app:layout_constraintVertical_bias=".9" />
 </androidx.constraintlayout.widget.ConstraintLayout>
