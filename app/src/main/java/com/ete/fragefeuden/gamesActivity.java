@@ -75,7 +75,7 @@ public class gamesActivity extends AppCompatActivity {
     }
 
     //Denna kallas när man fortsätter ett spel som redan är igång
-    public void continueGame(View view){
+    public void continueGame(View view, int btnClicked){
 
 
 
@@ -88,6 +88,20 @@ public class gamesActivity extends AppCompatActivity {
 
 
     }
+
+    public void startaSpel0(View view){
+        continueGame(view, 0);
+    }
+    public void startaSpel1(View view){
+        continueGame(view, 1);
+    }
+    public void startaSpel2(View view){
+        continueGame(view, 2);
+    }
+    public void startaSpel3(View view){
+        continueGame(view, 3);
+    }
+
 
 
 
