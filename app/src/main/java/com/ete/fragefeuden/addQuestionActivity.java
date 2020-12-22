@@ -15,6 +15,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class addQuestionActivity extends AppCompatActivity {
 
     DatabaseReference myRef;
+    FirebaseDatabase root;
+    String questionString, correctString, wrong1String, wrong2String, wrong3String;
     EditText question, correct, wrong1, wrong2, wrong3;
     databaseAddQuestion databaseAddQuestion;
     Button btn;
@@ -29,17 +31,21 @@ public class addQuestionActivity extends AppCompatActivity {
         wrong2 = findViewById(R.id.editTextWrong2);
         wrong3 = findViewById(R.id.editTextWrong3);
         btn = findViewById(R.id.button);
-        databaseAddQuestion = new databaseAddQuestion();
-        myRef = FirebaseDatabase.getInstance().getReference().child("databaseAddQuestion");
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                databaseAddQuestion.setQuestionString(question.getText().toString());
-                databaseAddQuestion.setCorrectString(correct.getText().toString());
-                databaseAddQuestion.setWrong1String(wrong1.getText().toString());
-                databaseAddQuestion.setWrong2String(wrong2.getText().toString());
-                databaseAddQuestion.setWrong3String(wrong3.getText().toString());
-                myRef.push().setValue(databaseAddQuestion);
+                root = FirebaseDatabase.getInstance();
+                myRef = root.getReference("questions");
+
+
+                questionString = question.getText().toString();
+                correctString = correct.getText().toString();
+                wrong1String = wrong1.getText().toString();
+                wrong2String = wrong2.getText().toString();
+                wrong3String = wrong3.getText().toString();
+                databaseAddQuestion addQuestionClass  = new databaseAddQuestion(questionString, correctString, wrong1String, wrong2String, wrong3String);
+                myRef.setValue(addQuestionClass);
             }
         });
     }
