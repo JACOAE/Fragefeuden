@@ -34,7 +34,7 @@ public class addQuestionActivity extends AppCompatActivity {
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
                 root = FirebaseDatabase.getInstance();
                 myRef = root.getReference("questions");
 
@@ -45,7 +45,7 @@ public class addQuestionActivity extends AppCompatActivity {
                 wrong2String = wrong2.getText().toString();
                 wrong3String = wrong3.getText().toString();
                 databaseAddQuestion addQuestionClass  = new databaseAddQuestion(questionString, correctString, wrong1String, wrong2String, wrong3String);
-                myRef.setValue(addQuestionClass);
+                myRef.child(questionString).setValue(addQuestionClass);
             }
         });
     }
