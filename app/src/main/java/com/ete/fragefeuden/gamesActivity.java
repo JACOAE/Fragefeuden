@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,14 +48,44 @@ public class gamesActivity extends AppCompatActivity {
 
         int numOfGames = player.getGameList().size();
 
-        player.getGameList().add(newGame);
+        //Byt denna när man ska ha mer spel
+        if(numOfGames < 4){
+            player.getGameList().add(newGame);
 
+            Button spelKnapp = null;
 
+            switch(numOfGames){
+                case 0:
+                    spelKnapp = (Button) findViewById(R.id.spel0);
+                    break;
+                case 1:
+                    spelKnapp = (Button) findViewById(R.id.spel1);
+                    break;
+            case 2:
+                spelKnapp = (Button) findViewById(R.id.spel2);
+                break;
+            case 3:
+                spelKnapp = (Button) findViewById(R.id.spel3);
+                break;
+            }
 
+            spelKnapp.setText(String.valueOf(int_random));
+        }
     }
 
     //Denna kallas när man fortsätter ett spel som redan är igång
-    protected void continueGame(){
+    public void continueGame(View view){
 
     }
+
+    public void joinGame(View view){
+
+        EditText joinGameNumber = (EditText) findViewById(R.id.joinGameNumber);
+        int gameNumber = Integer.parseInt(joinGameNumber.getText().toString());
+
+
+    }
+
+
+
 }
