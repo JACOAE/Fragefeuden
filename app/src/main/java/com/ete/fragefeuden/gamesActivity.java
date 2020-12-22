@@ -61,12 +61,12 @@ public class gamesActivity extends AppCompatActivity {
                 case 1:
                     spelKnapp = (Button) findViewById(R.id.spel1);
                     break;
-            case 2:
-                spelKnapp = (Button) findViewById(R.id.spel2);
-                break;
-            case 3:
-                spelKnapp = (Button) findViewById(R.id.spel3);
-                break;
+                case 2:
+                    spelKnapp = (Button) findViewById(R.id.spel2);
+                    break;
+                case 3:
+                    spelKnapp = (Button) findViewById(R.id.spel3);
+                    break;
             }
 
             spelKnapp.setText(String.valueOf(int_random));
@@ -75,6 +75,8 @@ public class gamesActivity extends AppCompatActivity {
 
     //Denna kallas när man fortsätter ett spel som redan är igång
     public void continueGame(View view){
+
+
 
     }
 
