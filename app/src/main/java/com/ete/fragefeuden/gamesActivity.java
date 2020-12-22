@@ -52,20 +52,25 @@ public class gamesActivity extends AppCompatActivity {
         if(numOfGames < 4){
             player.getGameList().add(newGame);
 
+
             Button spelKnapp = null;
 
             switch(numOfGames){
                 case 0:
                     spelKnapp = (Button) findViewById(R.id.spel0);
+                    player.setGame0ID(int_random);
                     break;
                 case 1:
                     spelKnapp = (Button) findViewById(R.id.spel1);
+                    player.setGame1ID(int_random);
                     break;
                 case 2:
                     spelKnapp = (Button) findViewById(R.id.spel2);
+                    player.setGame2ID(int_random);
                     break;
                 case 3:
                     spelKnapp = (Button) findViewById(R.id.spel3);
+                    player.setGame3ID(int_random);
                     break;
             }
 
@@ -77,6 +82,19 @@ public class gamesActivity extends AppCompatActivity {
     //Denna kallas när man fortsätter ett spel som redan är igång
     public void continueGame(View view, int btnClicked){
 
+        switch(btnClicked){
+            case 0:
+
+
+
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
 
 
     }
@@ -101,8 +119,4 @@ public class gamesActivity extends AppCompatActivity {
     public void startaSpel3(View view){
         continueGame(view, 3);
     }
-
-
-
-
 }
