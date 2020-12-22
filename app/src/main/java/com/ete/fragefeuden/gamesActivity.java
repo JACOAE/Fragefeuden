@@ -2,12 +2,14 @@ package com.ete.fragefeuden;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,6 +78,10 @@ public class gamesActivity extends AppCompatActivity {
 
             spelKnapp.setText(String.valueOf(int_random));
             spelKnapp.setVisibility(View.VISIBLE);
+        }
+        else {
+            Toast toast = Toast.makeText(getApplicationContext(), "Du kan ej ha mer än 4 aktiva spel!", Toast.LENGTH_LONG);
+            toast.show();
         }
     }
 

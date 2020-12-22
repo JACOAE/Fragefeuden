@@ -22,6 +22,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(homeIntent);
                 finish();
             }
-        }, 4000); //antal millisekunder att visa splash screen
+        }, 2000); //antal millisekunder att visa splash screen
     }
 }
