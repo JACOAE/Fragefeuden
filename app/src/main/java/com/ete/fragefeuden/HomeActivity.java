@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -16,7 +17,13 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void onClickPlay(View view) {
+
+        EditText playerView = (EditText) findViewById(R.id.playerNameText);
+        String playerName = playerView.getText().toString();
+
         Intent onClickIntent = new Intent(HomeActivity.this, gamesActivity.class);
+        onClickIntent.putExtra(Intent.EXTRA_TEXT, playerName);
+
         startActivity(onClickIntent);
     }
 
