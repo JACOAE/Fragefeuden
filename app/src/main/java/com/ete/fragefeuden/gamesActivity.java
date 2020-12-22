@@ -82,6 +82,19 @@ public class gamesActivity extends AppCompatActivity {
     //Denna kallas när man fortsätter ett spel som redan är igång
     public void continueGame(View view, int btnClicked){
 
+        switch(btnClicked){
+            case 0:
+
+
+
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
 
 
     }
