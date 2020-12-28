@@ -13,7 +13,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 //cool
 
-public class addQuestionActivity extends AppCompatActivity {
+public class addQuestionActivity extends AppCompatActivity implements Runnable{
 
     DatabaseReference myRef;
     FirebaseDatabase root;
@@ -44,10 +44,10 @@ public class addQuestionActivity extends AppCompatActivity {
         wrong1String = wrong1.getText().toString();
         wrong2String = wrong2.getText().toString();
         wrong3String = wrong3.getText().toString();
-        databaseAddQuestion addQuestionClass = new databaseAddQuestion(questionString, correctString, wrong1String, wrong2String, wrong3String);
-        myRef.child(questionString).setValue(addQuestionClass);
-
-        //TODO skicka värden till databas
+        //databaseAddQuestion addQuestionClass = new databaseAddQuestion(questionString, correctString, wrong1String, wrong2String, wrong3String);
+        //myRef.child(questionString).setValue(addQuestionClass);
+        Thread t1  = new Thread(new addQuestionActivity());
+        t1.start();
 
         question.setText("");
         correct.setText("");
@@ -67,4 +67,12 @@ public class addQuestionActivity extends AppCompatActivity {
             return false;
         } else return true;
     }
+    @Override
+    public void run() {
+        try {
+            databaseAddQuestion addQuestionClass = new databaseAddQuestion(questionString, correctString, wrong1String, wrong2String, wrong3String);
+            myRef.child(questionString).setValue(addQuestionClass);
+        }catch (Exception e) {}
+    }
+
 }
