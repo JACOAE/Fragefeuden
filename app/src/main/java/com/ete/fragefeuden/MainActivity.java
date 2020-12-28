@@ -1,5 +1,5 @@
 package com.ete.fragefeuden;
-
+//konga
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

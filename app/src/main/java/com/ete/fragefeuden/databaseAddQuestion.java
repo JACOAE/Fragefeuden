@@ -1,4 +1,5 @@
 package com.ete.fragefeuden;
+//apor
 
 public class databaseAddQuestion {
    private String questionString, correctString, wrong1String, wrong2String, wrong3String;
